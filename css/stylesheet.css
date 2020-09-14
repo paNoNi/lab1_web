@@ -1,39 +1,66 @@
+body {
+	background-image: url("../source/background.jpg")
+}
+
 #Navigator {
-	position: fixed;
-	width: 99%;
-	margin: 0 auto;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	margin-top: 50px;
+}
+
+header > h1 {
+	text-align: center;
+}
+
+#Navigator * {
+	margin: 0;
+	padding: 0;
+}
+
+#Navigator ul,
+#Navigator li {
 	list-style: none;
 }
 
-
-#Navigator:before {
-	content: "";
-	display: block;
-	height: 50px;
-	width: 100%;
-	background: #9370DB;
-	position: absolute;
-	left: 0;
-	z-index: -1;
+#Navigator > ul {
+	display: flex;
+	justify-content: center;
 }
 
-li > a {
-	color: #FFF;
-	text-decoration: none;
+#Navigator > ul > li {
+	display: block;
+	background: #f2f3f4;
+	padding: 15px 30px;
+	font-size: 14px;
 	text-transform: uppercase;
-	line-height: 50px;
-	display: block;
-	height: 50px;
-	padding: 0 30px;
-	line-height: 50px;
+	border-right: 1px solid #808080;
+
+	position: relative;
+}
+
+#Navigator > ul > li > a {
+	text-decoration: none;
+	color: black;
 }
 
 
-#Navigator > li {
-	float: left;
+li:first-child{
+	border-left: 1px solid #808080;
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
 }
 
-li > a:hover {
-	background-color: #8A2BE2;
-	display: block;
+
+li:last-child{
+	border-right: 1px solid #808080;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+#Navigator > ul > li:hover {
+	background: #fff;
+	cursor: pointer;
 }
