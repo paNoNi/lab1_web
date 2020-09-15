@@ -1,14 +1,54 @@
+
+body {
+	background: #E0FFFF;
+	background-size: 100%;
+}
+
 section {
-	display: none;
+	padding: 100px 200px;
+	background-color: #B0E0E6;
+	margin: 10px 100px;
+	min-height: 600px;
+	border-radius: 10px;
+	font-family: "Ranchers";
+	font-size: 25px;
+}
+
+ul > img {
+	width: 70%;
+	min-width: 150px;
+}
+
+#Formula {
+	font-size: 50px;
+}
+
+#Formula,
+#Quote,
+#TotemAnimal {
+	text-align: center;
+}
+
+h1 {
+	display: grid;
+	justify-content: center;
+}
+
+#Quote > ul {
+	list-style: none;
+}
+
+section > h2 {
+	display: grid;
+	font-size: 35px;
+	justify-content: center;
+	padding-bottom: 100px;
 }
 
 
 * {
 	margin: 0;
 	padding: 0;
-}
-
-#Navigator {
 }
 
 #Navigator > ul {
@@ -25,9 +65,8 @@ section {
 
 	list-style: none;
 
-
-
 }
+
 
 li > a {
 	display: flex;
@@ -59,4 +98,13 @@ li > a:hover {
 
 li > a:active {
 	background-color: #45C9C4;
+}
+
+blockquote:before {
+	content: "«";
+}
+
+
+blockquote:after {
+	content: "»";
 }
